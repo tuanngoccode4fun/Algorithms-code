@@ -1,12 +1,17 @@
 #include <stdio.h>
-int factorial(int N)
+ int i = 0;
+int factorial(long long  N, long long result)
 {
-    if (N == 1) return 1;
-    return N * factorial(N - 1);
+   
+    if (N == 1) return result;
+    printf("Value %d\n", ++i);
+    return factorial(N-1,N*result);
 }
 void main()
 {
-    int k = 100;
-    printf("Value %d\n", factorial(k));
+   
+    long long k =2000;
+    long long m = 1;
+    printf("Value %ld\n", factorial(k,m));
     
 }
