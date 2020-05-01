@@ -2,10 +2,10 @@
  int i = 0;
 int factorial(long long  N, long long result)
 {
-   
     if (N == 1) return result;
-    printf("Value %d\n", ++i);
+    printf("Value before %d\n", ++i);
     return factorial(N-1,N*result);
+    printf("Value after %d\n", ++i);
 }
 void main()
 {
