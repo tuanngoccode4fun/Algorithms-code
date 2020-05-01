@@ -13,10 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="picture">
+      <UniqueIdentifier>{e404b1d0-30c2-4ad3-bdd2-c5aa92b6d8b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Recursion and stack memory.bmp">
+      <Filter>picture</Filter>
+    </Image>
+    <Image Include="resolve stack overflow.bmp">
+      <Filter>picture</Filter>
+    </Image>
   </ItemGroup>
 </Project>
