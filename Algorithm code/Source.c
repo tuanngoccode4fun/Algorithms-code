@@ -1,19 +1,28 @@
 #include <stdio.h>
-void TowerOnHanoi(int plates, char robFirst,char robBetween,char robEnd)
+int array[3] = { 3,4,8 };
+int arraytemp[3];
+void makenumber(int n)
 {
-    if (plates == 1)
+    for (int i = 0; i < 3; i++)
     {
-        printf("Plate 1 from %c to %c \n", robFirst, robEnd);
-        return;
+        arraytemp[n] = i;
+        if (n == 2)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                printf("%d", array[ arraytemp[j]]);
+            }
+            printf("\n");
+
+        }
+        else
+        {
+            makenumber(n + 1);
+        }
     }
-    TowerOnHanoi(plates - 1, robFirst, robEnd, robBetween);
-    printf("Plate %d from %c to %c\n",plates, robFirst, robEnd);
-    TowerOnHanoi(plates - 1, robBetween, robFirst, robEnd);
-   
 }
+
 void main()
 {
-    TowerOnHanoi(2, 'A', 'B', 'C');
-   // printf("Value %ld\n");
-    
+    makenumber(0);
 }
