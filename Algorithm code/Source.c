@@ -4,20 +4,20 @@
 // phương pháp qui hoạch động là phương pháp chia để trị.
 // gặp những điều không mong muốn thì quay đầu lại.
 // kết hợp phục hồi dữ liệu thì gọi là đệ qui quay lui.
-int  fibo(int n)
+TowerHaNoi(int n, char A, char B, char C)
 {
-    printf("%d  ", n);
-    if (n <= 1)
+    if (n == 1)
     {
-        return 1;
+        printf("%c - %c \r\n", A, B);
     }
     else
     {
-        fibo(n - 1) + fibo(n - 2);
+        TowerHaNoi(n - 1, A, C, B);
+        TowerHaNoi(1, A, B,C);
+        TowerHaNoi(n - 1, C, B, A);
     }
-
 }
 void main()
 {
-    fibo(10);
+    TowerHaNoi(10, 'a', 'b', 'c');
 }
