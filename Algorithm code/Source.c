@@ -1,16 +1,23 @@
-#include <stdio.h>
-struct  giadinh
+﻿#include <stdio.h>
+// chữ đệ là chữ em
+// quay về lấy kết quả thèn nhỏ giải quyết thèn lớn. Và ngược lại điêu kiện dừng.
+// phương pháp qui hoạch động là phương pháp chia để trị.
+// gặp những điều không mong muốn thì quay đầu lại.
+// kết hợp phục hồi dữ liệu thì gọi là đệ qui quay lui.
+int  fibo(int n)
 {
-    int i;
-    int tuoi;
-    int noichon;
-};
+    printf("%d  ", n);
+    if (n <= 1)
+    {
+        return 1;
+    }
+    else
+    {
+        fibo(n - 1) + fibo(n - 2);
+    }
 
+}
 void main()
 {
-    struct giadinh gd;
-    gd.i = 0;
-    gd.tuoi = 28;
-    gd.noichon = 200;
-    printf_s("gia tri soluong = %d, tuoi = %d,noichon= %d", gd.i, gd.tuoi, gd.noichon);
+    fibo(10);
 }
