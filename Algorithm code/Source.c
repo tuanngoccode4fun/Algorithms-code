@@ -6,55 +6,45 @@
 // gặp những điều không mong muốn thì quay đầu lại.
 // kết hợp phục hồi dữ liệu thì gọi là đệ qui quay lui.
 // Thuc hanh de qui quay lui write 3 number make from 4 number;
-int arraymain[4];
-int arraytemp[3];
-void input()
+//union find
+// javascript
+// tinh tong n phan tu trong mang bằng đệ qui
+int arraymain[100];
+int numbers;
+int n = 0;
+void inputArray()
 {
-	printf("Vui long nhap so vao:\r\n");
-	for (int i = 0; i < 4; i++)
-	{
-	scanf_s	("%d", &arraymain[i]);
-	}
-
+    printf("Vui long nhap so phan tu: ");
+    scanf_s("%d", &numbers);
+    for (int i = 0; i < numbers; i++)
+    {
+        printf("Nhap phan tu thu %d :", i);
+        scanf_s("%d", &arraymain[i]);
+    }
+    printf("Phan tu vua nhap la :\r\n");
+    for (int i = 0; i < numbers; i++)
+    {
+        printf("%d  ", arraymain[i]);
+    }
 }
-bool IsExist(int value,int m)
+int sumArray(int array[], int numbers)
 {
-	for (int i = 0; i < m; i++)
-	{
-		if (arraytemp[i] == value)
-		{
-			return true;
-		}
-	}
-	return false;
+   
+    printf("\n %d ", numbers);
+    if (numbers == 0)
+    {
+        return arraymain[numbers];
+    }
+    else
+    {
+        return  arraymain[numbers] + sumArray(arraymain, numbers - 1);
+    }
 }
-void show(int n)
-{
-	for (int i = 0; i < 4; i++)
-	{
-		if (!IsExist(arraymain[i], n))
-		{
-			arraytemp[n] = arraymain[i];
-
-			if (n == 2)
-			{
-				for (int k = 0; k < 3; k++)
-				{
-					printf("%d", arraytemp[k]);
-				}
-				printf("\n");
-			}
-			else
-			{
-				show(n + 1);
-			}
-		}
-	}
-
-}
-
 void main()
 {
-	input();
-	show(0);
+  ///function input;
+    inputArray();
+    printf("\n Tong la : %d", sumArray(arraymain, numbers-1));
+    /// function dequi from array;
+
 }
